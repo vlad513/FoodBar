@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/menuFragment">
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.foodbar.ui.main.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_dishesDialogFragment"
+            app:destination="@id/dishesDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/dishesDialogFragment"
+        android:name="com.foodbar.ui.dishes_dialog.DishesDialogFragment"
+        android:label="fragment_dishes_dialog"
+        tools:layout="@layout/fragment_dishes_dialog" >
+        <argument
+            android:name="dishes"
+            app:argType="com.foodbar.data.models.Dishes" />
+    </dialog>
+</navigation>
